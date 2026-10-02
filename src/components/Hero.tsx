@@ -88,29 +88,21 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
 
           </div>
 
-          {/* Right Column: Redesigned Sleek Framing */}
+          {/* Right Column: Clean Cutout with Pure Ambient Radial Glow (Zero Box / Rectangle) */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end items-center">
-            <div className="relative w-full max-w-[360px] sm:max-w-[400px]">
+            <div className="relative flex items-center justify-center select-none">
               
-              {/* Outer Subtle Halo Accent */}
-              <div className="absolute -inset-2 rounded-[40px] bg-gradient-to-b from-rose-500/15 via-transparent to-transparent blur-xl pointer-events-none" />
+              {/* Vibrant Crimson / Rose Radial Glow Aura Directly Behind Portrait */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 sm:w-[380px] h-80 sm:h-[380px] rounded-full bg-rose-600/25 blur-[90px] pointer-events-none" />
 
-              {/* Redesigned Modern Minimalist Frame */}
-              <div className="relative rounded-[36px] bg-gradient-to-b from-[#18131B]/90 via-[#100D13]/70 to-[#0A080C]/90 border border-rose-500/25 overflow-hidden shadow-2xl p-4 pt-7 flex items-end justify-center min-h-[480px] sm:min-h-[530px]">
-                
-                {/* Internal Ambient Radial Lighting */}
-                <div className="absolute top-12 left-1/2 -translate-x-1/2 w-64 h-64 bg-rose-500/10 rounded-full blur-2xl pointer-events-none" />
-                
-                {/* Cutout Portrait */}
-                <div className="relative z-10 select-none">
-                  <img
-                    src={profileCutout}
-                    alt={PORTFOLIO_DATA.profile.displayName}
-                    className="h-[430px] sm:h-[480px] w-auto object-contain object-bottom drop-shadow-[0_20px_40px_rgba(0,0,0,0.95)]"
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
-
+              {/* Pure Cutout Portrait with Smooth Drop Shadows */}
+              <div className="relative z-10">
+                <img
+                  src={profileCutout}
+                  alt={PORTFOLIO_DATA.profile.displayName}
+                  className="h-[460px] sm:h-[520px] lg:h-[560px] w-auto object-contain object-top drop-shadow-[0_15px_35px_rgba(0,0,0,0.85)]"
+                  referrerPolicy="no-referrer"
+                />
               </div>
 
             </div>
