@@ -8,15 +8,15 @@ export const SkillsSection: React.FC = () => {
   const getIcon = (name: string) => {
     switch (name) {
       case 'Server':
-        return <Server className="w-5 h-5 text-rose-400" />;
+        return <Server className="w-5 h-5 text-rose-600" />;
       case 'Globe':
-        return <Globe className="w-5 h-5 text-rose-400" />;
+        return <Globe className="w-5 h-5 text-rose-600" />;
       case 'Briefcase':
-        return <Briefcase className="w-5 h-5 text-rose-400" />;
+        return <Briefcase className="w-5 h-5 text-rose-600" />;
       case 'Headphones':
-        return <Headphones className="w-5 h-5 text-rose-400" />;
+        return <Headphones className="w-5 h-5 text-rose-600" />;
       default:
-        return <Server className="w-5 h-5 text-rose-400" />;
+        return <Server className="w-5 h-5 text-rose-600" />;
     }
   };
 
@@ -26,10 +26,10 @@ export const SkillsSection: React.FC = () => {
 
   return (
     <section id="skills" className="section">
-      <div className="max-w-[1240px] mx-auto px-6 sm:px-8">
+      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 sm:mb-16">
           <div className="max-w-2xl">
             <span className="kicker">Core Competencies</span>
             <h2 className="section-title">Technical specializations & services</h2>
@@ -39,13 +39,13 @@ export const SkillsSection: React.FC = () => {
           </div>
 
           {/* Segmented Filter Control */}
-          <div className="flex items-center gap-1.5 p-1 bg-[#141115] rounded-xl border border-rose-950/50 w-fit overflow-x-auto max-w-full">
+          <div className="flex items-center gap-1.5 p-1 bg-zinc-100 rounded-xl border border-zinc-200 overflow-x-auto max-w-full no-scrollbar shadow-xs">
             <button
               onClick={() => setActiveTab('all')}
-              className={`px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
+              className={`px-4 py-2 text-xs font-semibold rounded-lg transition-all cursor-pointer whitespace-nowrap ${
                 activeTab === 'all'
-                  ? 'bg-rose-600 text-white shadow-xs'
-                  : 'text-zinc-400 hover:text-white'
+                  ? 'bg-rose-600 text-white shadow-sm'
+                  : 'text-zinc-600 hover:text-zinc-950'
               }`}
             >
               All Domains
@@ -54,10 +54,10 @@ export const SkillsSection: React.FC = () => {
               <button
                 key={cat.title}
                 onClick={() => setActiveTab(`cat-${idx}`)}
-                className={`px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-all cursor-pointer whitespace-nowrap ${
+                className={`px-4 py-2 text-xs font-semibold rounded-lg transition-all cursor-pointer whitespace-nowrap ${
                   activeTab === `cat-${idx}`
-                    ? 'bg-rose-600 text-white shadow-xs'
-                    : 'text-zinc-400 hover:text-white'
+                    ? 'bg-rose-600 text-white shadow-sm'
+                    : 'text-zinc-600 hover:text-zinc-950'
                 }`}
               >
                 {cat.title.split(' & ')[0]}
@@ -67,37 +67,37 @@ export const SkillsSection: React.FC = () => {
         </div>
 
         {/* Skills Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
           {filteredCategories.map((category) => (
             <div
               key={category.title}
-              className="card-crimson p-7 sm:p-8 flex flex-col justify-between"
+              className="card-crimson p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:border-rose-600 hover:-translate-y-1"
             >
               <div>
-                <div className="flex items-center gap-3.5 mb-6">
-                  <div className="w-11 h-11 rounded-xl bg-[#20171D] border border-rose-500/20 flex items-center justify-center shrink-0">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 rounded-2xl bg-rose-50 border border-rose-200 flex items-center justify-center shrink-0 shadow-xs">
                     {getIcon(category.iconName)}
                   </div>
                   <div>
-                    <h3 className="text-base sm:text-lg font-bold text-white">
+                    <h3 className="text-base sm:text-lg font-bold text-zinc-950">
                       {category.title}
                     </h3>
-                    <div className="flex items-center gap-2 text-xs font-mono text-rose-400">
-                      <span className="w-1.5 h-1.5 rounded-full bg-rose-500" />
+                    <div className="flex items-center gap-2 text-xs font-mono text-rose-600 mt-0.5 font-medium">
+                      <span className="w-1.5 h-1.5 rounded-full bg-rose-600 animate-pulse" />
                       <span>Production Verified</span>
                     </div>
                   </div>
                 </div>
 
-                {/* Clean unboxed checklist */}
+                {/* Checklist Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   {category.skills.map((skill) => (
                     <div
                       key={skill}
-                      className="flex items-center gap-2 text-xs sm:text-[13px] text-zinc-300 py-2 px-3 rounded-lg bg-[#0C0B0D] border border-white/5 hover:border-rose-500/30 transition-all font-mono"
+                      className="flex items-center gap-2 text-xs sm:text-[13px] text-zinc-700 py-2.5 px-3.5 rounded-xl bg-zinc-50 border border-zinc-200/80 hover:border-rose-300 transition-all font-mono"
                     >
-                      <Check className="w-3.5 h-3.5 text-rose-400 shrink-0" />
-                      <span>{skill}</span>
+                      <Check className="w-3.5 h-3.5 text-rose-600 shrink-0" />
+                      <span className="truncate">{skill}</span>
                     </div>
                   ))}
                 </div>

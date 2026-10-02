@@ -28,7 +28,7 @@ export const Navbar: React.FC = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#0B0A0C]/90 backdrop-blur-md border-b border-rose-950/40 py-3 shadow-2xl'
+          ? 'bg-white/90 backdrop-blur-md border-b border-zinc-200/85 py-3 shadow-sm'
           : 'bg-transparent py-5'
       }`}
     >
@@ -36,12 +36,12 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center justify-end md:justify-center">
           
           {/* Desktop Centered Floating Navigation Links */}
-          <nav className="hidden md:flex items-center gap-1.5 p-1.5 rounded-full bg-[#141115]/80 border border-rose-950/50 backdrop-blur-md shadow-lg">
+          <nav className="hidden md:flex items-center gap-1.5 p-1.5 rounded-full bg-zinc-100/90 border border-zinc-200 backdrop-blur-md shadow-xs">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="px-4 py-1.5 text-xs font-medium text-zinc-300 hover:text-white hover:bg-rose-950/50 rounded-full transition-all tracking-wide"
+                className="px-4 py-1.5 text-xs font-semibold text-zinc-700 hover:text-zinc-950 hover:bg-white rounded-full transition-all tracking-wide shadow-xs"
               >
                 {link.label}
               </a>
@@ -51,7 +51,7 @@ export const Navbar: React.FC = () => {
           {/* Mobile Hamburger Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-zinc-300 hover:text-white rounded-lg transition-colors focus:outline-none"
+            className="md:hidden p-2.5 text-zinc-700 hover:text-zinc-950 bg-zinc-100 hover:bg-zinc-200 rounded-xl transition-colors focus:outline-none border border-zinc-200 shadow-xs"
             aria-label="Toggle navigation"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -62,14 +62,14 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#141115] border-b border-rose-950/60 px-6 py-5 shadow-2xl animate-fadeIn">
+        <div className="md:hidden bg-white border-b border-zinc-200 px-6 py-5 shadow-xl animate-fadeIn">
           <div className="flex flex-col gap-2">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-between py-2.5 px-3 text-sm font-medium text-zinc-200 hover:text-rose-300 rounded-lg hover:bg-white/5 transition-colors"
+                className="flex items-center justify-between py-2.5 px-3 text-sm font-semibold text-zinc-800 hover:text-rose-600 rounded-xl hover:bg-rose-50 transition-colors"
               >
                 <span>{link.label}</span>
               </a>

@@ -7,24 +7,24 @@ export const AboutSection: React.FC = () => {
     switch (name) {
       case 'CheckCircle':
       case 'CheckCircle2':
-        return <CheckCircle2 className="w-5 h-5 text-rose-400" />;
+        return <CheckCircle2 className="w-5 h-5 text-rose-600" />;
       case 'ShieldCheck':
-        return <ShieldCheck className="w-5 h-5 text-rose-400" />;
+        return <ShieldCheck className="w-5 h-5 text-rose-600" />;
       case 'Wrench':
-        return <Wrench className="w-5 h-5 text-rose-400" />;
+        return <Wrench className="w-5 h-5 text-rose-600" />;
       case 'MessageSquare':
-        return <MessageSquare className="w-5 h-5 text-rose-400" />;
+        return <MessageSquare className="w-5 h-5 text-rose-600" />;
       default:
-        return <CheckCircle2 className="w-5 h-5 text-rose-400" />;
+        return <CheckCircle2 className="w-5 h-5 text-rose-600" />;
     }
   };
 
   return (
     <section id="about" className="section section-dim">
-      <div className="max-w-[1240px] mx-auto px-6 sm:px-8">
+      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-2xl mb-14">
+        <div className="max-w-2xl mb-12 sm:mb-16">
           <span className="kicker">
             Operational Principles
           </span>
@@ -37,23 +37,23 @@ export const AboutSection: React.FC = () => {
         </div>
 
         {/* Feature Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
           {PORTFOLIO_DATA.features.map((feature, idx) => (
             <div
               key={feature.title}
-              className="card-crimson p-7 sm:p-8 flex items-start gap-4 sm:gap-5 group relative overflow-hidden"
+              className="card-crimson p-6 sm:p-8 flex items-start gap-4 sm:gap-5 group relative overflow-hidden transition-all duration-300 hover:border-rose-600 hover:-translate-y-1"
             >
-              <div className="w-11 h-11 rounded-xl bg-[#20171D] border border-rose-500/20 flex items-center justify-center shrink-0">
+              <div className="w-12 h-12 rounded-2xl bg-rose-50 border border-rose-200 flex items-center justify-center shrink-0 shadow-xs group-hover:scale-105 transition-transform">
                 {getIcon(feature.iconName)}
               </div>
               <div className="flex-1">
-                <div className="flex items-center justify-between mb-1.5">
-                  <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-rose-300 transition-colors">
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="text-base sm:text-lg font-bold text-zinc-950 group-hover:text-rose-600 transition-colors">
                     {feature.title}
                   </h3>
-                  <span className="text-xs font-mono text-zinc-500">0{idx + 1}</span>
+                  <span className="text-xs font-mono text-zinc-400">0{idx + 1}</span>
                 </div>
-                <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-normal">
+                <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed font-normal">
                   {feature.desc}
                 </p>
               </div>
