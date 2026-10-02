@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { AmbientBackground } from './components/AmbientBackground';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { AboutSection } from './components/AboutSection';
 import { SkillsSection } from './components/SkillsSection';
 import { ExperienceSection } from './components/ExperienceSection';
 import { ToolsSection } from './components/ToolsSection';
@@ -26,9 +25,6 @@ export default function App() {
       <main className="relative z-10">
         {/* Hero Section: Zero background behind cutout */}
         <Hero onOpenResume={() => setResumeOpen(true)} />
-
-        {/* Operational Principles */}
-        <AboutSection />
 
         {/* Core Technical Specializations */}
         <SkillsSection />

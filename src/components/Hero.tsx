@@ -92,15 +92,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
           <div className="lg:col-span-5 flex justify-center lg:justify-end items-center">
             <div className="relative flex items-center justify-center select-none">
               
-              {/* Soft Crimson / Rose Radial Glow Aura Behind Portrait */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 sm:w-[440px] lg:w-[500px] h-80 sm:h-[440px] lg:h-[500px] rounded-full bg-rose-500/15 blur-[90px] pointer-events-none" />
-
-              {/* Pure Portrait Image with Increased Sizing */}
+              {/* Pure Portrait Image with Increased Sizing and No Shadows */}
               <div className="relative z-10 flex items-center justify-center">
                 <img
                   src={profileCutout}
                   alt={PORTFOLIO_DATA.profile.displayName}
-                  className="h-[520px] sm:h-[600px] lg:h-[660px] xl:h-[720px] w-auto max-w-none object-contain object-top drop-shadow-[0_20px_40px_rgba(0,0,0,0.12)] transition-all duration-300"
+                  className="h-[520px] sm:h-[600px] lg:h-[660px] xl:h-[720px] w-auto max-w-none object-contain object-top"
                   referrerPolicy="no-referrer"
                 />
               </div>
